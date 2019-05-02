@@ -1,15 +1,15 @@
 # CST205_Project
 
 Required libraries:
-    docutils
-    pygments
-    pypiwin32
-    kivy
-    kivy.deps.sdl2
-    kivy.deps.glew
-    kivy.deps.gstreamer
-    kivy.deps.angle
-    kivy-garden
+    docutils,
+    pygments,
+    pypiwin32,
+    kivy,
+    kivy.deps.sdl2,
+    kivy.deps.glew,
+    kivy.deps.gstreamer,
+    kivy.deps.angle,
+    kivy-garden,
     mapview
 
 Installation:

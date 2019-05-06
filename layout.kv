@@ -1,3 +1,12 @@
+<Manager>:
+    Search:
+        id: search
+        name: 'find'
+    Map:
+        id: trackingmap
+        name: 'map'
+
+
 <Search>:
     #Set background color
     canvas:
@@ -6,15 +15,35 @@
         Rectangle:
             pos: self.pos
             size: self.size
-    AnchorLayout:
-        TextInput:
-            size: 300, 30
-            size_hint: None, None
-            multiline: False
-    AnchorLayout:
-        anchor_y: 'bottom'
-        size_hint: 0, 0.25
-        Button:
-            text: 'Confirm'
-            size_hint: None, None
-            size: 100, 50
+    GridLayout:
+        rows: 3
+        AnchorLayout:
+            anchor_y: 'bottom'
+            Label:
+                text: "Enter runner ID"
+                size: 100, 10
+                size_hint: None, None
+        AnchorLayout:
+            anchor_y: 'center'
+            size_hint: 0, 0.15
+            TextInput:
+                id: runnerID
+                size: 300, 30
+                size_hint: None, None
+                multiline: False
+        AnchorLayout:
+            anchor_y: 'top'
+            size_hint: 0, 1
+            Button:
+                text: 'Track em'
+                size_hint: None, None
+                size: 100, 50
+                on_press:
+                    root.find_runner()
+
+<Map>:
+    MapView:
+        id: trackingmap
+        zoom: 15
+        #lat: 36.604340
+        #lon: -121.854599

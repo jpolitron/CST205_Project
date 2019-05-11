@@ -1,14 +1,25 @@
 from keys import *
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
 
 app = Flask(__name__)
 app.config['GOOGLEMAPS_KEY'] = my_key
 GoogleMaps(app, key = my_key)
+
+#For ID input
 @app.route("/")
+def idEntry():
+    return render_template("input.html")
+
+#https://github.com/rochacbruno/Flask-GoogleMaps
+@app.route("/", methods=['POST'])
 def mapview():
+    #Pulls the ID from the previous page
+    text = request.form['text']
     # creating a map in the view
+    if text != 'csumb':
+        return render_template("errorpage.html")
     mymap = Map(
         identifier="view-side",
         lat=37.4419,

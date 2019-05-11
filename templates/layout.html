@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--This is the parent class for the webpage so the layout is consistent across
+    multiple pages-->
+<html>
+    <head>
+        <!--Retreives CSS file to use on pages-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+        <!--Puts the title from current page and adds " - Specataor Assist" to the end-->
+        <title>{% block title %}{% endblock %} - Spectator Assist</title>
+    </head>
+    <body>
+        <!--Title bar, just to make the page pretty-->
+        <div class="titlebar">
+            <center>Spectator Assist</center>
+        </div>
+        <!--Contents of the current page go here-->
+        {% block content %}{% endblock %}
+    </body>
+</html>

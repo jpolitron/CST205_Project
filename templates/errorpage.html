@@ -1,0 +1,16 @@
+<!--Takes layout.html and adds content to it-->
+{% extends "layout.html" %}
+
+{% block title %}
+ID Not Found
+{% endblock %}
+
+{% block content %}
+<center>
+    Error, ID is not found!<br>
+    <!--Button to go back-->
+    <form action="{{url_for('idEntry')}}">
+        <input type="submit" value="Back">
+    </form>    
+</center>
+{% endblock %}

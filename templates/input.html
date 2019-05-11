@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}
+Enter ID
+{% endblock %}
+
+{% block content %}
+<center>
+    <!--Form to put in the ID of the runner-->
+    <form method="POST">
+        Enter runner ID here:<br>
+        <input name="text"><br>
+        <input type="submit" value="Track 'em" onclick="{{url_for('mapview')}}">
+    </form>
+</center>
+{% endblock %}

@@ -17,9 +17,10 @@ def idEntry():
 def mapview():
     #Pulls the ID from the previous page
     text = request.form['text']
-    # creating a map in the view
+    #Test error catch system
     if text != 'csumb':
         return render_template("errorpage.html")
+    # creating a map in the view
     mymap = Map(
         identifier="view-side",
         lat=37.4419,

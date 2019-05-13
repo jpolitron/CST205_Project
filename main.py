@@ -23,6 +23,7 @@ def mapview():
     if text != 'csumb':
         return render_template("errorpage.html")
     # creating a map in the view
+    #https://www.geeksforgeeks.org/python-plotting-google-map-using-gmplot-package/
     #Caasi's Phone Coordinates
     gmap3 = gmplot.GoogleMapPlotter(36.6707, 
                                         -121.6049, 13) #30.3164945 , 78.03219179999999

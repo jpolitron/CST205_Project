@@ -26,7 +26,7 @@ def mapview():
     #Caasi's Phone Coordinates
     gmap3 = gmplot.GoogleMapPlotter(36.6707, 
                                         -121.6049, 13) #30.3164945 , 78.03219179999999
-    latitude_list = [36.6707, 36.6570, 36.65719] #[ 30.3358376, 30.307977, 30.3216419 ] 
+    latitude_list = [36.6707, 36.6570, 36.65718] #[ 30.3358376, 30.307977, 30.3216419 ] 
     longitude_list = [-121.6049, -121.7952, -121.7927] #[ 77.8701919, 78.048457, 78.0413095 ]
     # scatter method of map object  
     # scatter points on the google map 

@@ -2,6 +2,8 @@ from keys import *
 from flask import Flask, render_template, request
 from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map
+#import gmplot package
+from gmplot import gmplot
 
 app = Flask(__name__)
 app.config['GOOGLEMAPS_KEY'] = my_key
@@ -21,12 +23,27 @@ def mapview():
     if text != 'csumb':
         return render_template("errorpage.html")
     # creating a map in the view
-    mymap = Map(
-        identifier="view-side",
-        lat=37.4419,
-        lng=-122.1419,
-        markers=[(37.4419, -122.1419)]
-    )
+    gmap3 = gmplot.GoogleMapPlotter(30.3164945, 
+                                        78.03219179999999, 13)
+    
+    latitude_list = [ 30.3358376, 30.307977, 30.3216419 ] 
+    longitude_list = [ 77.8701919, 78.048457, 78.0413095 ] 
+  
+    gmap3 = gmplot.GoogleMapPlotter(30.3164945, 
+                                78.03219179999999, 13) 
+  
+    # scatter method of map object  
+    # scatter points on the google map 
+    gmap3.scatter( latitude_list, longitude_list, '# FF0000', 
+                              size = 40, marker = False ) 
+  
+    # Plot method Draw a line in 
+    # between given coordinates 
+    gmap3.plot(latitude_list, longitude_list,  
+               'cornflowerblue', edge_width = 5) 
+    
+    #Creates a new webpage
+    gmap3.draw("templates/map.html")
     sndmap = Map(
         identifier="sndmap",
         lat=37.4419,
@@ -46,7 +63,8 @@ def mapview():
           }
         ]
     )
-    return render_template('index.html', mymap=mymap, sndmap=sndmap)
+    return render_template('map.html')
+    #return render_template('index.html', mymap=mymap, sndmap=sndmap)
 
 if __name__ == "__main__":
     app.run(debug=True)

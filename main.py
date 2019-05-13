@@ -54,10 +54,10 @@ def mapview():
              'infobox': "<b>Hello World</b>"
           },
           {
-            #Cynthia's Phone Coordinates ***this is not cynthia's(37.4300,-122.1400)
+            #Runner's Marker
              'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-             'lat': 36.6570, #36.6878
-             'lng': -121.7952, #-121.6560
+             'lat': 36.65718, 
+             'lng': -121.7927, 
              'infobox': "<b>Hello World from other place</b>"
           }
         ]

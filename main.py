@@ -23,20 +23,15 @@ def mapview():
     if text != 'csumb':
         return render_template("errorpage.html")
     # creating a map in the view
-    gmap3 = gmplot.GoogleMapPlotter(30.3164945, 
-                                        78.03219179999999, 13)
-    
-    latitude_list = [ 30.3358376, 30.307977, 30.3216419 ] 
-    longitude_list = [ 77.8701919, 78.048457, 78.0413095 ] 
-  
-    gmap3 = gmplot.GoogleMapPlotter(30.3164945, 
-                                78.03219179999999, 13) 
-  
+    #Caasi's Phone Coordinates
+    gmap3 = gmplot.GoogleMapPlotter(36.6707, 
+                                        -121.6049, 13) #30.3164945 , 78.03219179999999
+    latitude_list = [36.6707, 36.6570, 36.65719] #[ 30.3358376, 30.307977, 30.3216419 ] 
+    longitude_list = [-121.6049, -121.7952, -121.7927] #[ 77.8701919, 78.048457, 78.0413095 ]
     # scatter method of map object  
     # scatter points on the google map 
-    gmap3.scatter( latitude_list, longitude_list, '# FF0000', 
+    gmap3.scatter( latitude_list, longitude_list, '#FF0000', 
                               size = 40, marker = False ) 
-  
     # Plot method Draw a line in 
     # between given coordinates 
     gmap3.plot(latitude_list, longitude_list,  
@@ -46,19 +41,23 @@ def mapview():
     gmap3.draw("templates/map.html")
     sndmap = Map(
         identifier="sndmap",
-        lat=37.4419,
-        lng=-122.1419,
+        lat=36.6707, #37.4419
+        lng=-121.6049, #-122.1419
+        #MAKE A ROUTE IN CSUMB AND PLOT MY COORDINATES ON THE ROUTE
+        #AND OUTPUT "RUNNER ID#CSUMB IS HERE"
         markers=[
           {
+              #Caasi's Phone Coordinates
              'icon': 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-             'lat': 37.4419,
-             'lng': -122.1419,
+             'lat': 36.6707, #37.4419
+             'lng': -121.6049, #-122.1419
              'infobox': "<b>Hello World</b>"
           },
           {
+            #Cynthia's Phone Coordinates ***this is not cynthia's(37.4300,-122.1400)
              'icon': 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-             'lat': 37.4300,
-             'lng': -122.1400,
+             'lat': 36.6570, #36.6878
+             'lng': -121.7952, #-121.6560
              'infobox': "<b>Hello World from other place</b>"
           }
         ]
